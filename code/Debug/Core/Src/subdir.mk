@@ -5,12 +5,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/button1.c \
-../Core/Src/button2.c \
-../Core/Src/button3.c \
-../Core/Src/fsm_run.c \
+../Core/Src/button.c \
+../Core/Src/fsm_automatic.c \
+../Core/Src/fsm_manual.c \
 ../Core/Src/global.c \
 ../Core/Src/main.c \
+../Core/Src/set_traffic_led.c \
 ../Core/Src/software_timer.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -19,12 +19,12 @@ C_SRCS += \
 ../Core/Src/system_stm32f1xx.c 
 
 OBJS += \
-./Core/Src/button1.o \
-./Core/Src/button2.o \
-./Core/Src/button3.o \
-./Core/Src/fsm_run.o \
+./Core/Src/button.o \
+./Core/Src/fsm_automatic.o \
+./Core/Src/fsm_manual.o \
 ./Core/Src/global.o \
 ./Core/Src/main.o \
+./Core/Src/set_traffic_led.o \
 ./Core/Src/software_timer.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -33,12 +33,12 @@ OBJS += \
 ./Core/Src/system_stm32f1xx.o 
 
 C_DEPS += \
-./Core/Src/button1.d \
-./Core/Src/button2.d \
-./Core/Src/button3.d \
-./Core/Src/fsm_run.d \
+./Core/Src/button.d \
+./Core/Src/fsm_automatic.d \
+./Core/Src/fsm_manual.d \
 ./Core/Src/global.d \
 ./Core/Src/main.d \
+./Core/Src/set_traffic_led.d \
 ./Core/Src/software_timer.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \

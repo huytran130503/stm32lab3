@@ -1,38 +1,45 @@
 /*
  * global.h
  *
- *  Created on: Oct 23, 2023
+ *  Created on: Oct 30, 2023
  *      Author: DELL
  */
 
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
-#include "main.h"
+#include "set_traffic_led.h"
 #include "software_timer.h"
-#include "button1.h"
-#include "button2.h"
-#include "button3.h"
-#include "fsm_run.h"
+#include "button.h"
+#include "main.h"
 
-extern int status1;
-extern int status2;
-extern int status3; //timer
+#define INIT		1
+#define AUTO_RED	2
+#define AUTO_GREEN	3
+#define AUTO_YELLOW	4
 
-#define redCounter		5000
-#define yellowCounter	2000
-#define greenCounter	3000
+#define MAN_INIT	13
+#define MAN_RED		14
+#define MAN_GREEN	15
+#define MAN_YELLOW	16
 
-#define INIT		0
-#define RED			1
-#define YELLOW		2
-#define GREEN		3
-#define MAN_RED		11
-#define MAN_YELLOW 	12
-#define MAN_GREEN 	13
 
-#define WAIT		19
-#define AUTOMATIC	20
-#define MANUAL		21
+
+extern int status;
+extern int MAN_duration;
+
+extern float red_duration ;
+extern float green_duration ;
+extern float yellow_duration ;
+extern int led;
+extern int led1;
+
+extern float red_counter ;
+extern float green_counter ;
+extern float yellow_counter ;
+
+extern float red_counter_1 ;
+extern float green_counter_1 ;
+extern float yellow_counter_1 ;
 
 #endif /* INC_GLOBAL_H_ */

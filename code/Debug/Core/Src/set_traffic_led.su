@@ -1,0 +1,15 @@
+set_traffic_led.c:11:6:set_7Segment_2	16	static
+set_traffic_led.c:116:6:set_7Segment_1	16	static
+set_traffic_led.c:221:6:set_red	8	static
+set_traffic_led.c:227:6:set_green	8	static
+set_traffic_led.c:233:6:set_yellow	8	static
+set_traffic_led.c:239:6:set_red_follow	8	static
+set_traffic_led.c:245:6:set_green_follow	8	static
+set_traffic_led.c:251:6:set_yellow_follow	8	static
+set_traffic_led.c:257:6:set_autoAjust_red	16	static
+set_traffic_led.c:263:6:set_autoAjust_yellow	16	static
+set_traffic_led.c:269:6:set_autoAjust_green	16	static
+set_traffic_led.c:276:6:clear	8	static
+set_traffic_led.c:282:6:clear_follow	8	static
+set_traffic_led.c:289:6:set_7segled_mode	16	static
+set_traffic_led.c:359:6:set_7segled_duration	16	static
