@@ -1,8 +1,8 @@
-button.c:25:6:subKeyProcess	8	static
-button.c:30:6:set_button1_flag	4	static
-button.c:34:6:reset_button1_flag	4	static
-button.c:38:6:set_button2_flag	4	static
-button.c:42:5:isButton2Pressed	4	static
-button.c:50:5:isButton1Pressed	4	static
-button.c:58:6:Button1Press	8	static
-button.c:92:6:set_duration_main	8	static
+button.c:31:6:subKeyProcess	8	static
+button.c:36:6:reset_button1_flag	4	static
+button.c:40:6:set_button1_flag	4	static
+button.c:48:6:set_button2_flag	4	static
+button.c:60:5:isButton2Pressed	4	static
+button.c:68:5:isButton1Pressed	4	static
+button.c:76:6:Button1Press	8	static
+button.c:138:6:set_duration_main	8	static

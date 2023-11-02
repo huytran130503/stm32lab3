@@ -10,9 +10,9 @@
 int status =0;
 int MAN_duration = 0;
 
-float red_duration = 5;
-float green_duration = 3;
-float yellow_duration = 2;
+float red_duration = 3;
+float green_duration = 2;
+float yellow_duration = 1;
 
 int led =0;
 int led1 =0;

@@ -51,6 +51,9 @@ void fsm_manual_run(){
 				}
 
 			}
+//			if(isButton3Pressed()==1){
+//				status = INIT;
+//			}
 			break;
 
 		case MAN_GREEN:
@@ -77,6 +80,9 @@ void fsm_manual_run(){
 					MAN_duration=0;
 				}
 			}
+//			if(isButton3Pressed()==1){
+//				status = INIT;
+//			}
 			break;
 
 		case MAN_YELLOW:
@@ -101,6 +107,9 @@ void fsm_manual_run(){
 					MAN_duration=0;
 				}
 			}
+//			if(isButton3Pressed()==1){
+//			status = INIT;
+//			}
 			break;
 		default:
 			break;

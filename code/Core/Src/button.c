@@ -8,18 +8,24 @@
 
 #include <button.h>
 
-int KeyReg0 = NORMAL_STATE;
+int KeyReg0 = NORMAL_STATE; // 1
 int KeyReg1 = NORMAL_STATE;
 int KeyReg2 = NORMAL_STATE;
 int KeyReg3 = NORMAL_STATE;
 
-int KeyReg4 = NORMAL_STATE;
+int KeyReg4 = NORMAL_STATE; // 2
 int KeyReg5 = NORMAL_STATE;
 int KeyReg6 = NORMAL_STATE;
 int KeyReg7 = NORMAL_STATE;
 
+//int KeyRega = NORMAL_STATE; // 3
+//int KeyRegb = NORMAL_STATE;
+//int KeyRegc = NORMAL_STATE;
+//int KeyRegd = NORMAL_STATE;
+
 int button1_flag = 0;
 int button2_flag = 0;
+int button3_flag = 0;
 int TimerForKeyPress = 200;
 
 void subKeyProcess()
@@ -27,17 +33,29 @@ void subKeyProcess()
 	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 }
 
-void set_button1_flag(){
-	button1_flag =1;
-}
-
 void reset_button1_flag(){
 	button1_flag =0;
 }
 
+void set_button1_flag(){
+	button1_flag =1;
+}
+
+//void set_button3_flag(){
+//	button3_flag =1;
+//}
+
 void set_button2_flag(){
 	button2_flag =1;
 }
+
+//int isButton3Pressed(){
+//	if(button3_flag ==1){
+//		button3_flag =0;
+//		return 1;
+//	}
+//	return 0;
+//}
 
 int isButton2Pressed(){
 	if(button2_flag ==1){
@@ -88,6 +106,34 @@ void Button1Press()
 		}
 	}
 }
+
+//void Button3Press(){
+//	KeyRega = KeyRegb;
+//	KeyRegb = KeyRegc;
+//	KeyRegc = HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin);
+//	if((KeyRega == KeyRegb) &&(KeyRegb == KeyRegc)){
+//		if(KeyRegd != KeyRegc){
+//			KeyRegd = KeyRegc;
+//			if(KeyRegc == PRESSED_STATE)
+//			{
+//				set_button3_flag();
+//				TimerForKeyPress = 200;
+//			}
+//		}
+//		else{
+//			TimerForKeyPress--;
+//			if(TimerForKeyPress == 0){
+//				if(KeyRegc == PRESSED_STATE)
+//				{
+//					set_button3_flag();
+//					TimerForKeyPress = 200;
+//				}
+//
+//			}
+//
+//		}
+//	}
+//}
 
 void set_duration_main()
 {

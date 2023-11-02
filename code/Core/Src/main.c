@@ -198,7 +198,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
@@ -212,12 +211,6 @@ static void MX_GPIO_Init(void)
                           |c2_Pin|d2_Pin|e2_Pin|f2_Pin
                           |g2_Pin|d1_Pin|e1_Pin|f1_Pin
                           |g1_Pin|a2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : BUTTON_Pin */
-  GPIO_InitStruct.Pin = BUTTON_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_RED1_Pin LED_YELLOW1_Pin LED_RED_Pin LED_YELLOW_Pin
                            LED_GREEN_Pin LED_GREEN1_Pin EN3_Pin */
@@ -248,8 +241,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : BUTTON1_Pin BUTTON2_Pin */
-  GPIO_InitStruct.Pin = BUTTON1_Pin|BUTTON2_Pin;
+  /*Configure GPIO pins : BUTTON1_Pin BUTTON2_Pin BUTTON3_Pin */
+  GPIO_InitStruct.Pin = BUTTON1_Pin|BUTTON2_Pin|BUTTON3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -261,6 +254,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	timerRun();
 	Button1Press();
+//	Button3Press();
 	set_duration_main();
 }
 /* USER CODE END 4 */

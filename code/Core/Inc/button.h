@@ -20,10 +20,13 @@ extern int set_duration_GREEN	;
 
 void set_button1_flag();
 void set_button2_flag();
+//void set_button3_flag();
 void reset_button1_flag();
 void Button1Press();
+//void Button3Press();
 void set_duration_main();
 int isButton1Pressed();
 int isButton2Pressed();
+//int isButton3Pressed();
 
 #endif /* INC_BUTTON_H_ */
