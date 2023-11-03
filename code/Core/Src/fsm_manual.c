@@ -7,111 +7,109 @@
 
 
 #include"fsm_manual.h"
-#include"fsm_automatic.h"
 
 void fsm_manual_run(){
-	switch(status){
-		case MAN_INIT:
-			clear();
-			clear_follow();
-			set_7segled_mode(1);
-			if(isButton1Pressed()==1){
-				MAN_duration =0;
-				status = MAN_RED;
-				set_Timer1(500);
+	switch(led_status){
+	case RED_MAN:
+		if (timer5_flag == 1){
+			setTimer5(25);
+			if (toogleFlag == 0){
+				toogleFlag = 1;
+				onRED1();
+				onRED2();
 			}
-			if(timer1_flag == 1){
-				status = AUTO_RED;
-				reset_counter();				//countdown
-				set_Timer1(red_duration*100);
+			else {
+				offALL();
 			}
-			break;
+		}
+		if (isButtonPressed(1) == 1){
+			r_inc++;
+			timerRoad1++;
+			if (r_inc >= 100) r_inc=2;
+		}
+		if (isButtonPressed(0) == 1){
+			setTimer5(1);
+			led_status = YELLOW_MAN;
 
-		case MAN_RED:
-			set_7segled_mode(2);
-			set_7segled_duration(MAN_duration);
-			if(timer1_flag == 1){
-				status = AUTO_RED;
-				reset_counter();				//countdown
-				set_Timer1(red_duration*100);
-			}
-			if(isButton1Pressed()==1){
-				MAN_duration =0;
-				status = MAN_GREEN;
-				set_Timer1(500);
-			}
-			// when press button2 update red duaration
-			if(isButton2Pressed()==1){
-				set_autoAjust_red(MAN_duration);
-				set_Timer1(200);
-				if(timer1_flag==1){
-					status = AUTO_RED;
-					reset_counter();				//countdown
-					MAN_duration=0;
-				}
+			timerRoad1 = y_val;
+			timerRoad2 = 3;
+		}
+		if (isButtonPressed(2) == 1){
+			r_val=r_inc;
+		}
+		break;
 
+	case YELLOW_MAN:
+		if (timer5_flag == 1){
+			setTimer5(25);
+			if (toogleFlag == 0){
+				toogleFlag = 1;
+				onYELLOW1();
+				onYELLOW2();
 			}
-//			if(isButton3Pressed()==1){
-//				status = INIT;
-//			}
-			break;
+			else {
+				offALL();
+			}
+		}
+		if (isButtonPressed(1) == 1){
+			y_inc++;
+			timerRoad1++;
+			if (y_inc >= r_val) y_inc=1;
+		}
+		if (isButtonPressed(0) == 1){
+			setTimer5(1);
+			led_status = GREEN_MAN;
 
-		case MAN_GREEN:
-			set_7segled_mode(3);
-			set_7segled_duration(MAN_duration);
-			if(timer1_flag==1){
-				status = AUTO_RED;
-				reset_counter();				//countdown
-				set_Timer1(green_duration*100);
-			}
-			if(isButton1Pressed()==1){
-				MAN_duration =0;
-				status = MAN_YELLOW;
-				set_Timer1(500);
-			}
-			// when press button2 update green duration
-			if(isButton2Pressed()==1){
-				set_autoAjust_green(MAN_duration);
-				//green_duration = MAN_duration;
-				set_Timer1(200);
-				if(timer1_flag==1){
-					status = AUTO_RED;				//Back to red and do auto
-					reset_counter();				//countdown
-					MAN_duration=0;
-				}
-			}
-//			if(isButton3Pressed()==1){
-//				status = INIT;
-//			}
-			break;
+			timerRoad1 = g_val;
+			timerRoad2 = 4;
+		}
+		if (isButtonPressed(2) == 1){
+			y_val=y_inc;
+		}
+		break;
 
-		case MAN_YELLOW:
-			set_7segled_mode(4);
-			set_7segled_duration(MAN_duration);
-			if(timer1_flag==1){
-				status = AUTO_RED;
-				reset_counter();				//countdown
-				set_Timer1(yellow_duration*100);
+	case GREEN_MAN:
+		if (timer5_flag == 1){
+			setTimer5(25);
+			if (toogleFlag == 0){
+				toogleFlag = 1;
+				onGREEN1();
+				onGREEN2();
 			}
-			if(isButton1Pressed()==1){
-				MAN_duration =0;
-				status = MAN_INIT;
-				set_Timer1(500);
+			else {
+				offALL();
 			}
-			if(isButton2Pressed()==1){
-				set_autoAjust_yellow(MAN_duration);
-				set_Timer1(200);
-				if(timer1_flag==1){
-					status = AUTO_RED;				//Back to red and do auto
-					reset_counter();				//countdown
-					MAN_duration=0;
-				}
-			}
-//			if(isButton3Pressed()==1){
-//			status = INIT;
-//			}
-			break;
-		default:
-			break;
+		}
+		if (isButtonPressed(1) == 1){
+			g_inc++;
+			timerRoad1++;
+			if (g_inc >= r_val) g_inc=1;
+		}
+		if (isButtonPressed(0) == 1){
+			led_status = RED_GREEN;
+			g_val = r_val-y_val;
+			timerRoad1 = r_val;
+			timerRoad2 = g_val;
+			updateLedBuffer();
+			setTimer1(g_val*100);
+			setTimer2(100);
+
+			setTimer4(1);
+			index_led=0;
+
+			clearSignal();
+
+		}
+		if (isButtonPressed(2) == 1){
+			g_val=g_inc;
+			y_val=r_val-g_val;
+		}
+		break;
+
+	default:
+		break;
+	}
+	if (isButtonPressed(2) == 1){
+		timerRoad1 = r_val;
 	}
 }

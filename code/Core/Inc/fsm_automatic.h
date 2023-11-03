@@ -10,10 +10,7 @@
 
 #include "global.h"
 
-void fsm_automatic_run();
-void traffic_7Segment_led();
+void fsm_automatic();
 
-void reset_counter();
-void reset_counter_follow();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */

@@ -11,22 +11,14 @@
 #include "global.h"
 
 
-#define NORMAL_STATE GPIO_PIN_SET
-#define PRESSED_STATE GPIO_PIN_RESET
+#define NORMAL_STATE SET
+#define PRESSED_STATE RESET
 
-extern int set_duration_RED 	;
-extern int set_duration_YELLOW ;
-extern int set_duration_GREEN	;
+#define NUM_BUTTON 3
 
-void set_button1_flag();
-void set_button2_flag();
-//void set_button3_flag();
-void reset_button1_flag();
-void Button1Press();
-//void Button3Press();
-void set_duration_main();
-int isButton1Pressed();
-int isButton2Pressed();
-//int isButton3Pressed();
+extern int button_flag[NUM_BUTTON];
+
+void getKeyInput();
+int isButtonPressed(int num);
 
 #endif /* INC_BUTTON_H_ */

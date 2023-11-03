@@ -1,0 +1,7 @@
+led.c:11:6:onRED1	8	static
+led.c:16:6:onYELLOW1	8	static
+led.c:21:6:onGREEN1	8	static
+led.c:27:6:onRED2	8	static
+led.c:32:6:onYELLOW2	8	static
+led.c:37:6:onGREEN2	8	static
+led.c:43:6:offALL	8	static

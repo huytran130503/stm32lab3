@@ -1,5 +1,1 @@
-fsm_automatic.c:10:6:fsm_automatic_run	8	static
-fsm_automatic.c:82:6:reset_counter	4	static
-fsm_automatic.c:87:6:reset_counter_follow	4	static
-fsm_automatic.c:92:6:traffic_7Segment_led	16	static
-fsm_automatic.c:144:6:traffic_7Segment_led1	16	static
+fsm_automatic.c:11:6:fsm_automatic	8	static

@@ -7,19 +7,27 @@
 
 #include "global.h"
 
-int status =0;
-int MAN_duration = 0;
+int led_status=0;
 
-float red_duration = 3;
-float green_duration = 2;
-float yellow_duration = 1;
+int led_buffer[4]={0,0,0,0};
+int index_led = 0;
 
-int led =0;
-int led1 =0;
+int r_val=5;
+int y_val=2;
+int g_val=3;
 
-float red_counter =0;
-float green_counter =0;
-float yellow_counter =0;
-float red_counter_1 =0;
-float green_counter_1 =0;
-float yellow_counter_1 =0;
+int timerRoad1=0;
+int timerRoad2=0;
+
+int r_inc=0;
+int g_inc=0;
+int y_inc=0;
+
+int toogleFlag=0;
+
+void updateLedBuffer(){
+	led_buffer[0] = timerRoad1 / 10;
+	led_buffer[1] = timerRoad1 % 10;
+	led_buffer[2] = timerRoad2 / 10;
+	led_buffer[3] = timerRoad2 % 10;
+}

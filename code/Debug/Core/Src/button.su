@@ -1,8 +1,3 @@
-button.c:31:6:subKeyProcess	8	static
-button.c:36:6:reset_button1_flag	4	static
-button.c:40:6:set_button1_flag	4	static
-button.c:48:6:set_button2_flag	4	static
-button.c:60:5:isButton2Pressed	4	static
-button.c:68:5:isButton1Pressed	4	static
-button.c:76:6:Button1Press	8	static
-button.c:138:6:set_duration_main	8	static
+button.c:21:5:isButtonPressed	16	static
+button.c:29:6:subKeyProcess	16	static
+button.c:34:6:getKeyInput	16	static

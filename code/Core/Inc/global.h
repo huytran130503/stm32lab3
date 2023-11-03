@@ -1,45 +1,46 @@
 /*
  * global.h
  *
- *  Created on: Oct 30, 2023
+ *  Created on: Nov 3, 2023
  *      Author: DELL
  */
 
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
-#include "set_traffic_led.h"
-#include "software_timer.h"
-#include "button.h"
 #include "main.h"
+#include "software_timer.h"
+#include "display7SEG.h"
+#include "button.h"
+#include "led.h"
 
-#define INIT		1
-#define AUTO_RED	2
-#define AUTO_GREEN	3
-#define AUTO_YELLOW	4
+//fsm
+#define INIT 0
+#define RED_GREEN 1
+#define RED_YELLOW 2
+#define GREEN_RED 3
+#define YELLOW_RED 4
 
-#define MAN_INIT	13
-#define MAN_RED		14
-#define MAN_GREEN	15
-#define MAN_YELLOW	16
+#define RED_MAN 12
+#define GREEN_MAN 13
+#define YELLOW_MAN 14
 
+extern int led_status;
+extern int r_val;
+extern int g_val;
+extern int y_val;
 
+extern int r_inc;
+extern int g_inc;
+extern int y_inc;
 
-extern int status;
-extern int MAN_duration;
+extern int toogleFlag;
+//7seg
+extern int led_buffer[4];
+extern int index_led;
+extern int timerRoad1;
+extern int timerRoad2;
 
-extern float red_duration ;
-extern float green_duration ;
-extern float yellow_duration ;
-extern int led;
-extern int led1;
-
-extern float red_counter ;
-extern float green_counter ;
-extern float yellow_counter ;
-
-extern float red_counter_1 ;
-extern float green_counter_1 ;
-extern float yellow_counter_1 ;
+void updateLedBuffer();
 
 #endif /* INC_GLOBAL_H_ */

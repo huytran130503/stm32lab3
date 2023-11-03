@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "global.h"
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
 /* USER CODE END Includes */
@@ -91,15 +90,31 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
+  setTimer3(1);
+  setTimer4(1);
+  timerRoad1 = r_val;
+  timerRoad2 = g_val;
+  r_inc=r_val;
+  g_inc=g_val;
+  y_inc=y_val;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  status = INIT;
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  if (timer3_flag == 1){
+		  setTimer3(10);
+		  updateLedBuffer();
+	  }
+	  if (timer4_flag == 1){
+		  setTimer4(25);
+		  displaySignal(index_led++);
+		  if (index_led >= 4) index_led=0;
+	  }
+	  fsm_automatic();
+	  fsm_manual_run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -236,12 +251,9 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
-	Button1Press();
-//	Button3Press();
-	set_duration_main();
+	getKeyInput();
 }
 /* USER CODE END 4 */
 
