@@ -20,5 +20,6 @@ extern int button_flag[NUM_BUTTON];
 
 void getKeyInput();
 int isButtonPressed(int num);
+void resetButton();
 
 #endif /* INC_BUTTON_H_ */

@@ -1,3 +1,3 @@
-display7SEG.c:11:6:clearSignal	8	static
-display7SEG.c:18:6:display7SEG	16	static
-display7SEG.c:112:6:displaySignal	16	static
+../Core/Src/display7SEG.c:11:6:clearSignal	8	static
+../Core/Src/display7SEG.c:18:6:display7SEG	16	static
+../Core/Src/display7SEG.c:112:6:displaySignal	8	static

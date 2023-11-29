@@ -27,7 +27,6 @@ int isButtonPressed(int num){
 }
 
 void subKeyProcess(int num){
-	//TODO
 	button_flag[num]=1;
 }
 
@@ -35,11 +34,10 @@ void getKeyInput(){
 	for (int i=0; i<NUM_BUTTON; i++){
 		KeyReg2[i] = KeyReg1[i];
 		KeyReg1[i] = KeyReg0[i];
-		//Add your button here
 		KeyReg0[i] = HAL_GPIO_ReadPin(GPIOB, mode[i]);
 
-		if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){ //avoid noise
-			if (KeyReg2[i] != KeyReg3[i]){ //change state
+		if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){
+			if (KeyReg2[i] != KeyReg3[i]){
 				KeyReg3[i] = KeyReg2[i];
 				if (KeyReg3[i] == PRESSED_STATE){
 					TimeOutForKeyPress[i] = 200;
@@ -47,7 +45,7 @@ void getKeyInput(){
 				}
 			}
 
-			else{ //press without release
+			else{
 				TimeOutForKeyPress[i]--;
 				if (TimeOutForKeyPress[i] == 0){
 					KeyReg3[i] = NORMAL_STATE;
@@ -55,5 +53,11 @@ void getKeyInput(){
 
 			}
 		}
+	}
+}
+
+void resetButton(){
+	for (int i = 0; i < NUM_BUTTON; i++){
+		isButtonPressed(i);
 	}
 }

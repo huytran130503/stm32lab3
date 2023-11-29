@@ -8,6 +8,19 @@
 
 #include "led.h"
 
+void toggleYellow(){
+	HAL_GPIO_TogglePin(YELLOW1_GPIO_Port, YELLOW1_Pin);
+	HAL_GPIO_TogglePin(YELLOW2_GPIO_Port, YELLOW2_Pin);
+}
+void toggleGreen(){
+	HAL_GPIO_TogglePin(GREEN1_GPIO_Port, GREEN1_Pin);
+	HAL_GPIO_TogglePin(GREEN2_GPIO_Port, GREEN2_Pin);
+}
+void toggleRed(){
+	HAL_GPIO_TogglePin(RED1_GPIO_Port, RED1_Pin);
+	HAL_GPIO_TogglePin(RED2_GPIO_Port, RED2_Pin);
+}
+
 void onRED1(){
 	HAL_GPIO_WritePin(RED1_GPIO_Port, RED1_Pin, RESET);
 	HAL_GPIO_WritePin(GREEN1_GPIO_Port, GREEN1_Pin, SET);

@@ -109,10 +109,10 @@ void display7SEG(int num){
 	}
 }
 
-void displaySignal(int index){
+void displaySignal(){
 	clearSignal();
-	display7SEG(led_buffer[index]);
-	switch(index){
+	display7SEG(led_buffer[index_led]);
+	switch(index_led){
 	case 0:
 		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
 		break;
@@ -128,4 +128,6 @@ void displaySignal(int index){
 	default:
 		break;
 	}
+	index_led++;
+	if (index_led >= 4) index_led=0;
 }

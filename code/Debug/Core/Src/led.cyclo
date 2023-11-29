@@ -1,0 +1,10 @@
+../Core/Src/led.c:11:6:toggleYellow	1
+../Core/Src/led.c:15:6:toggleGreen	1
+../Core/Src/led.c:19:6:toggleRed	1
+../Core/Src/led.c:24:6:onRED1	1
+../Core/Src/led.c:29:6:onYELLOW1	1
+../Core/Src/led.c:34:6:onGREEN1	1
+../Core/Src/led.c:40:6:onRED2	1
+../Core/Src/led.c:45:6:onYELLOW2	1
+../Core/Src/led.c:50:6:onGREEN2	1
+../Core/Src/led.c:56:6:offALL	1

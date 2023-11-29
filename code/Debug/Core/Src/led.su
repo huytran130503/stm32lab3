@@ -1,7 +1,10 @@
-led.c:11:6:onRED1	8	static
-led.c:16:6:onYELLOW1	8	static
-led.c:21:6:onGREEN1	8	static
-led.c:27:6:onRED2	8	static
-led.c:32:6:onYELLOW2	8	static
-led.c:37:6:onGREEN2	8	static
-led.c:43:6:offALL	8	static
+../Core/Src/led.c:11:6:toggleYellow	8	static
+../Core/Src/led.c:15:6:toggleGreen	8	static
+../Core/Src/led.c:19:6:toggleRed	8	static
+../Core/Src/led.c:24:6:onRED1	8	static
+../Core/Src/led.c:29:6:onYELLOW1	8	static
+../Core/Src/led.c:34:6:onGREEN1	8	static
+../Core/Src/led.c:40:6:onRED2	8	static
+../Core/Src/led.c:45:6:onYELLOW2	8	static
+../Core/Src/led.c:50:6:onGREEN2	8	static
+../Core/Src/led.c:56:6:offALL	8	static

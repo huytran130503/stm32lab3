@@ -1,0 +1,3 @@
+../Core/Src/display7SEG.c:11:6:clearSignal	1
+../Core/Src/display7SEG.c:18:6:display7SEG	11
+../Core/Src/display7SEG.c:112:6:displaySignal	6

@@ -1,3 +1,4 @@
-button.c:21:5:isButtonPressed	16	static
-button.c:29:6:subKeyProcess	16	static
-button.c:34:6:getKeyInput	16	static
+../Core/Src/button.c:21:5:isButtonPressed	16	static
+../Core/Src/button.c:29:6:subKeyProcess	16	static
+../Core/Src/button.c:33:6:getKeyInput	16	static
+../Core/Src/button.c:59:6:resetButton	16	static
